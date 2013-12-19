@@ -1,0 +1,12 @@
+com.czapiewski.client
+com.czapiewski.client.events
+com.czapiewski.client.ui
+com.czapiewski.common.dto
+com.czapiewski.ejb
+com.czapiewski.ejb.intf
+com.czapiewski.entity
+com.czapiewski.persistencecontext.intf
+com.czapiewski.server
+com.czapiewski.server.utils
+com.czapiewski.service
+com.czapiewski.shared

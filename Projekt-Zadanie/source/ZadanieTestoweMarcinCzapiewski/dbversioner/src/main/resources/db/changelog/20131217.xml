@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet id="201312172005" author="mczapiewski">
+		<comment>Dodaje tabele w której przechowywane będą komentarze</comment>
+		<createTable tableName="COMMENT">
+			<column name="ID_COMMENT" type="bigint">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="AUTHOR_NAME" type="varchar(10)">
+				<constraints nullable="false" />
+			</column>
+			<column name="USER_COMMENT" type="varchar(1000)">
+				<constraints nullable="false" />
+			</column>
+			<column name="CREATE_DATE" type="timestamp" />
+		</createTable>
+	</changeSet>
+
+	<changeSet id="201312172010" author="mczapiewski">
+		<comment>Dodaje sekwencje do PK tabeli COMMENT</comment>
+		<!-- <createSequence incrementBy="1" sequenceName="COMMENTSSEQUENCE" startValue="500" 
+			/> -->
+		<sql>CREATE SEQUENCE COMMENTSSEQUENCE START WITH 500 INCREMENT BY 1
+		</sql>
+	</changeSet>
+
+	<changeSet id="201312172015" author="mczapiewski">
+		<comment>tabla - generator PK</comment>
+		<createTable tableName="is_generators">
+			<column name=" value" type="int" />
+			<column name="name" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
